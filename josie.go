@@ -6,6 +6,7 @@ import (
 	"time"
 )
 
+// This is the JOSIE algorithm presented in the SIGMOD paper.
 func searchMergeProbeCostModelGreedy(
 	db *sql.DB,
 	listTable,

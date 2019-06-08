@@ -123,10 +123,19 @@ var (
 	batchSize = 20
 	// The algorithms to run
 	algorithms = map[string]func(db *sql.DB, listTable, setTable string, tb tokenTable, q rawTokenSet, k int, ignoreSelf bool) ([]searchResult, experimentResult){
+		// MergeList
 		// "merge_list":                    searchMergeList,
+
+		// MergeList-D
 		"merge_distinct_list": searchMergeDistinctList,
+
+		// ProbeSet
 		// "probe_set_suffix":              searchProbeSetSuffix,
+
+		// ProbeSet-D
 		"probe_set_optimized":           searchProbeSetOptimized,
+
+		// JOSIE
 		"merge_probe_cost_model_greedy": searchMergeProbeCostModelGreedy,
 	}
 	lshAlgorithms = map[string]func(db *sql.DB, setTable string, lsh *lshensemble.LshEnsemble, tb tokenTable, q rawTokenSet, k int, ignoreSelf bool, groundTruth []searchResult) ([]searchResult, experimentResult){

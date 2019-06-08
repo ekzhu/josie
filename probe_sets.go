@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-// the base line algorithm that combines prefix filter and position filter
+// the baseline ProbeSet algorithm that combines prefix filter and position filter
 func searchProbeSetSuffix(db *sql.DB, listTable, setTable string, tb tokenTable, query rawTokenSet, k int, ignoreSelf bool) ([]searchResult, experimentResult) {
 	var expResult experimentResult
 	ac := newActionCollecter(len(query.RawTokens))
@@ -61,7 +61,7 @@ func searchProbeSetSuffix(db *sql.DB, listTable, setTable string, tb tokenTable,
 	return results, expResult
 }
 
-// optimized using distinct lists
+// The baseline ProbeSet-D algorithm optimized using distinct lists.
 func searchProbeSetOptimized(db *sql.DB, listTable, setTable string, tb tokenTable, query rawTokenSet, k int, ignoreSelf bool) ([]searchResult, experimentResult) {
 	var expResult experimentResult
 	ac := newActionCollecter(len(query.RawTokens))

@@ -5,6 +5,7 @@ import (
 	"time"
 )
 
+// The baseline MergeList algorithm without distinct posting list optimization.
 func searchMergeList(db *sql.DB, listTable, setTable string, tb tokenTable, query rawTokenSet, k int, ignoreSelf bool) ([]searchResult, experimentResult) {
 	var expResult experimentResult
 
@@ -50,6 +51,7 @@ func searchMergeList(db *sql.DB, listTable, setTable string, tb tokenTable, quer
 	return results, expResult
 }
 
+// The baseline MergeList-D algorithm with distinct posting list optimization.
 func searchMergeDistinctList(db *sql.DB, listTable, setTable string, tb tokenTable, query rawTokenSet, k int, ignoreSelf bool) ([]searchResult, experimentResult) {
 	var expResult experimentResult
 
