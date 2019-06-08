@@ -1,0 +1,9 @@
+redis
+psycopg2
+rdbtools
+python-lzf
+pandas
+matplotlib
+gprof2dot
+pybloomfiltermmap
+scipy
