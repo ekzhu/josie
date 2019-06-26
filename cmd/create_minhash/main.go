@@ -97,7 +97,7 @@ func main() {
 			insertedIDs[lastID] = true
 		}
 		if mh == nil {
-			mh = lshensemble.NewMinhash(topk.MinhashSeed, topk.MinhashSize)
+			mh = lshensemble.NewMinhash(joise.MinhashSeed, joise.MinhashSize)
 		}
 		mh.Push(rawToken)
 		lastID = id

@@ -68,7 +68,7 @@ func sampleReadSetCost(db *sql.DB, pgTableQueries, pgTableReadSetCostSamples str
 	for i, id := range sampleSetIDs {
 		log.Printf("Read set id = %d, #%d/%d", id, i+1, len(sampleSetIDs))
 		start := time.Now()
-		s := topk.SetTokens(db, pgTableSets, id)
+		s := joise.SetTokens(db, pgTableSets, id)
 		dur := time.Now().Sub(start)
 		// Cost is the duration in ns
 		_, err = db.Exec(fmt.Sprintf(`INSERT INTO %s (id, size, cost) VALUES ($1, $2, $3);`,
@@ -132,7 +132,7 @@ func sampleReadListCost(db *sql.DB, pgTableReadListCostSamples string, minLength
 	for i, token := range sampleListTokens {
 		log.Printf("Read list token = %d, #%d/%d", token, i+1, len(sampleListTokens))
 		start := time.Now()
-		_ = topk.InvertedList(db, pgTableLists, token)
+		_ = joise.InvertedList(db, pgTableLists, token)
 		dur := time.Now().Sub(start)
 		// Cost is the duration in ns
 		_, err = db.Exec(fmt.Sprintf(`UPDATE %s SET cost = $1 WHERE token = $2;`,

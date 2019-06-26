@@ -30,9 +30,9 @@ func main() {
 	defer db.Close()
 
 	if benchmark == "canada_us_uk" {
-		topk.RunOpenDataExperiments(db, filepath.Join(output, benchmark), cpuProfile, true)
+		joise.RunOpenDataExperiments(db, filepath.Join(output, benchmark), cpuProfile, true)
 	}
 	if benchmark == "webtable" {
-		topk.RunWebTableExperiments(db, filepath.Join(output, benchmark), cpuProfile, true)
+		joise.RunWebTableExperiments(db, filepath.Join(output, benchmark), cpuProfile, true)
 	}
 }

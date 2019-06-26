@@ -1,4 +1,4 @@
-package topk
+package joise
 
 // CandidateEntry keeps track of unread candidate set
 // All positions are 0-starting indexes
