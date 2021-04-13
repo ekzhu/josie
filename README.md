@@ -2,7 +2,7 @@
 
 This repository contains the code and benchmarks for the SIGMOD 2019 paper:
 [*JOSIE: Overlap Set Similarity Search for Finding Joinable Tables in Data 
-Lakes*](http://www.cs.toronto.edu/~ekzhu/papers/josie.pdf).
+Lakes*](https://dl.acm.org/doi/pdf/10.1145/3299869.3300065).
 Follow the steps here to run the experiments.
 
 ## Requirements
