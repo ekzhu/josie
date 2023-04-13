@@ -36,7 +36,7 @@ func newCandidateEntry(id int64, size, candidateCurrentPosition, queryCurrentPos
 // queryCurrentPosition and candidateCurrentPosition
 func (ce *candidateEntry) update(candidateCurrentPosition, skippedOverlap int) {
 	ce.latestMatchPosition = candidateCurrentPosition
-	ce.partialOverlap = skippedOverlap + 1 // skipped + this position
+	ce.partialOverlap = ce.partialOverlap + skippedOverlap + 1 // skipped + this position
 }
 
 // Calculate the upperbound overlap, this assumes update has been called if
